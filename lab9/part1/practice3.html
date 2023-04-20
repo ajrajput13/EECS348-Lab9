@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EECS 348 Lab 7: Practice 3</title>
+        <h1>Practice 3: Password Verification</h1>
+        <style>
+            body {
+                background-color: #F8CA9B; 
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Password 1: <input type = "text" id = "pass1" value> <br> <br>
+            Password 2: <input type = "text" id = "pass2" value> <br> <br>
+            <button onclick = "Validate()">Validate Passwords</button>
+        </p>
+        
+        <script>
+            function Validate() {
+                var password1 = document.getElementById("pass1").value;
+                var password2 = document.getElementById("pass2").value;
+            
+                if (password1.length < 8) 
+                {
+                    alert("Password 1 must be 8 or more characters long.");
+                }
+                else if (password2.length < 8)
+                {
+                    alert("Password 2 must be 8 or more characters long.");
+                }
+                else if (password1 !== password2)
+                {
+                    alert("Passwords do not match!");
+                }
+                else
+                {
+                    alert("Passwords matched successfully!");
+                }
+            }
+        </script>
+    </body>
+</html>

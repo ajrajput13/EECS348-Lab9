@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EECS 348 Lab 7: Practice 2</title>
+    <h1><center>Practice 2: Color Control</center></h1>
+	<style>
+		body {
+			background-color: #F8CA9B; 
+		}
+        #text {
+           background-color: white;
+           border: 6px solid black;
+        }
+	</style>
+</head>
+<body>
+    <div id="text">
+        <p><center>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <br>
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo <br>
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center></p>
+    </div>
+    <div>
+        <p>
+            <label for="size">Border Size:</label>
+            <input type="text" id="size" name="size">
+            <br>
+            <br>
+            <label for="BorderR">Border Red (0-255):</label>
+            <input type="text" id="BorderR" name="BorderR">
+            <br>
+            <label for="BorderG">Border Green (0-255):</label>
+            <input type="text" id="BorderG" name="BorderG">
+            <br>
+            <label for="BorderB">Border Blue (0-255):</label>
+            <input type="text" id="BorderB" name="BorderB">
+            <br>
+            <br>
+            <label for="BackR">Background Red (0-255):</label>
+            <input type="text" id="BackR" name="BackR">
+            <br>
+            <label for="BackG">Background Green (0-255):</label>
+            <input type="text" id="BackG" name="BackG">
+            <br>
+            <label for="BackB">Background Blue (0-255):</label>
+            <input type="text" id="BackB" name="BackB">
+            <br>
+            <button onclick="Change()">Apply Changes</button>
+        </p>
+    </div>
+    <script>
+    function Change() {
+           var Size = document.getElementById("size").value;
+           var R = document.getElementById("BorderR").value;
+           var G = document.getElementById("BorderG").value;
+           var B = document.getElementById("BorderB").value;
+           var R2 = document.getElementById("BackR").value;
+           var G2 = document.getElementById("BackG").value;
+           var B2 = document.getElementById("BackB").value;
+
+           var text = document.getElementById("text");
+           text.style.borderWidth = Size + "px";
+           var color1 = "rgb(" + R + "," + G + "," + B + ")";
+           text.style.borderColor = color1;
+           var color2 = "rgb(" + R2 + "," + G2 + "," + B2 + ")";
+           text.style.backgroundColor = color2;
+       }
+   </script>
+</body>
+</html>
